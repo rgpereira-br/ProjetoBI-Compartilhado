@@ -1,0 +1,9 @@
+relationship 25adbc21-8cad-40cf-bc7f-f71783747344
+	joinOnDateBehavior: datePartOnly
+	fromColumn: dCalendario.Data
+	toColumn: LocalDateTable_ffb7dfd0-ba82-4f5f-9218-fee2725afccd.Date
+
+relationship 6d808585-3a53-5a6c-b9d2-2157552c01d5
+	fromColumn: fVendas.DataEmissao
+	toColumn: dCalendario.Data
+

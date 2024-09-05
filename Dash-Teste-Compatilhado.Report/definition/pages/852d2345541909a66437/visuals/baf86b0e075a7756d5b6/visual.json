@@ -1,0 +1,131 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "baf86b0e075a7756d5b6",
+  "position": {
+    "x": 15.506607929515418,
+    "y": 99.926848462930309,
+    "z": 3,
+    "height": 530.04405286343615,
+    "width": 460.96916299559473,
+    "tabOrder": 3
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCalendario"
+                    }
+                  },
+                  "Property": "Nome do Mês"
+                }
+              },
+              "queryRef": "dCalendario.Nome do Mês",
+              "nativeQueryRef": "Nome do Mês",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fVendas"
+                        }
+                      },
+                      "Property": "QtdItens"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fVendas.QtdItens)",
+              "nativeQueryRef": "Soma de QtdItens"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "values": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Compact'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

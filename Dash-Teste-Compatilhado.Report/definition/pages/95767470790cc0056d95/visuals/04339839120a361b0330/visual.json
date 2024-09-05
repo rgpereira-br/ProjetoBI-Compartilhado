@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "04339839120a361b0330",
+  "position": {
+    "x": 29.347981848578936,
+    "y": 0,
+    "z": 1,
+    "height": 74.592787198471456,
+    "width": 294.70265106281346,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Teste Roberto",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontStyle": "italic",
+                      "fontSize": "32pt",
+                      "color": "#094780"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

@@ -1,0 +1,11 @@
+expression Consulta1 =
+		let
+		    Fonte = List.Dates
+		in
+		    Fonte
+	lineageTag: ac2806e9-cb1c-4b10-b841-3870d787f883
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Function
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Dash-Teste-Compatilhado"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "576cf992-0b22-4455-9e6a-71b9b91c1d51"
+  }
+}

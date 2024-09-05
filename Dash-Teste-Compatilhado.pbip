@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "artifacts": [
+    {
+      "report": {
+        "path": "Dash-Teste-Compatilhado.Report"
+      }
+    }
+  ],
+  "settings": {
+    "enableAutoRecovery": true
+  }
+}

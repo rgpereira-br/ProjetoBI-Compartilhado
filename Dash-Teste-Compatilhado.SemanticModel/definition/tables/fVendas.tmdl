@@ -1,0 +1,131 @@
+table fVendas
+	lineageTag: 804fbe6a-6c77-411b-b2ac-d01fe6f22ba2
+
+	column DataEmissao
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 5c20e77f-06e5-4bd1-88cc-88d80958633b
+		summarizeBy: none
+		sourceColumn: DataEmissao
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column NFe
+		dataType: string
+		lineageTag: 1f8168fa-d39f-4216-ab96-b306b5a4d890
+		summarizeBy: none
+		sourceColumn: NFe
+
+		annotation SummarizationSetBy = Automatic
+
+	column cdProduto
+		dataType: int64
+		formatString: 0
+		lineageTag: 6ae0a075-9cbe-4a6f-b7b1-466a9d177761
+		summarizeBy: sum
+		sourceColumn: cdProduto
+
+		annotation SummarizationSetBy = Automatic
+
+	column Produto
+		dataType: string
+		lineageTag: 302effa1-4d43-4854-91b2-e26c2a1f3441
+		summarizeBy: none
+		sourceColumn: Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Grupo Produto'
+		dataType: string
+		lineageTag: cf8b65ac-4209-4684-a03e-e389abbaba45
+		summarizeBy: none
+		sourceColumn: Grupo Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Linha Produto'
+		dataType: string
+		lineageTag: 696d384a-15d9-4dae-aeb7-4093c6268d19
+		summarizeBy: none
+		sourceColumn: Linha Produto
+
+		annotation SummarizationSetBy = Automatic
+
+	column cdVendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: 6dccd1b9-0ec9-437f-aa35-67cdc4552f40
+		summarizeBy: sum
+		sourceColumn: cdVendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendedor
+		dataType: string
+		lineageTag: 2abc3494-5c64-42fb-a0d7-4e23f82b58b0
+		summarizeBy: none
+		sourceColumn: Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supervisor
+		dataType: string
+		lineageTag: d41c296f-5c7d-4e7e-a02e-798cc99e3bf6
+		summarizeBy: none
+		sourceColumn: Supervisor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Gerente
+		dataType: string
+		lineageTag: 662cc1ea-02a9-4471-87b8-a9da327826a6
+		summarizeBy: none
+		sourceColumn: Gerente
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Equipe Vendas'
+		dataType: string
+		lineageTag: a2013481-af7b-47cf-849b-adf9b26e9a04
+		summarizeBy: none
+		sourceColumn: Equipe Vendas
+
+		annotation SummarizationSetBy = Automatic
+
+	column QtdItens
+		dataType: double
+		lineageTag: e90e9e15-7135-4e2f-ad7d-da0e1152ab5c
+		summarizeBy: sum
+		sourceColumn: QtdItens
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ValorUnitario
+		dataType: double
+		lineageTag: 00657020-78e6-44ac-9d60-55852917cd7f
+		summarizeBy: sum
+		sourceColumn: ValorUnitario
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fVendas = m
+		mode: import
+		source =
+				let
+				    Fonte = Excel.Workbook(File.Contents("C:\Users\rgper\OneDrive\Documents\GitHub\Projetos-Compartilhados-PowerBI\Vendas.xlsx"), null, true),
+				    Planilha1_Sheet = Fonte{[Item="Planilha1",Kind="Sheet"]}[Data],
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Planilha1_Sheet, [PromoteAllScalars=true]),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos",{{"NFe", type text}, {"cdProduto", Int64.Type}, {"Produto", type text}, {"Grupo Produto", type text}, {"Linha Produto", type text}, {"cdVendedor", Int64.Type}, {"Vendedor", type text}, {"Supervisor", type text}, {"Gerente", type text}, {"Equipe Vendas", type text}, {"QtdItens", type number}, {"ValorUnitario", type number}, {"DataEmissao", type date}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+
