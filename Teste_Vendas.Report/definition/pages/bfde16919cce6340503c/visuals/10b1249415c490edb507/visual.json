@@ -1,0 +1,62 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
+  "name": "10b1249415c490edb507",
+  "position": {
+    "x": 92.444444444444443,
+    "y": 113.77777777777777,
+    "z": 0,
+    "height": 401.06666666666666,
+    "width": 930.13333333333333,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "dCalendario"
+                    }
+                  },
+                  "Property": "Nome do Mês"
+                }
+              },
+              "queryRef": "dCalendario.Nome do Mês",
+              "nativeQueryRef": "Nome do Mês",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "dVendas"
+                        }
+                      },
+                      "Property": "ValorVenda"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(dVendas.ValorVenda)",
+              "nativeQueryRef": "Soma de ValorVenda"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
