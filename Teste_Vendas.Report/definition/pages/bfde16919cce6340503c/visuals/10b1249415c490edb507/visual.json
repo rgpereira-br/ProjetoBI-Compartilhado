@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.1.0/schema.json",
-  "name": "1879a17d9391a6c90b4b",
+  "name": "10b1249415c490edb507",
   "position": {
-    "x": 250.68067828994506,
-    "y": 95.380941007881546,
-    "z": 4,
-    "height": 529.48650585144492,
-    "width": 787.50417960353479,
-    "tabOrder": 4
+    "x": 92.444444444444443,
+    "y": 113.77777777777777,
+    "z": 0,
+    "height": 401.06666666666666,
+    "width": 930.13333333333333,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "areaChart",
     "query": {
       "queryState": {
         "Category": {
@@ -41,43 +41,21 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "fVendas"
+                          "Entity": "dVendas"
                         }
                       },
-                      "Property": "QtdItens"
+                      "Property": "ValorVenda"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(fVendas.QtdItens)",
-              "nativeQueryRef": "Soma de QtdItens"
+              "queryRef": "Sum(dVendas.ValorVenda)",
+              "nativeQueryRef": "Soma de ValorVenda"
             }
           ]
         }
       }
-    },
-    "objects": {
-      "general": [
-        {
-          "properties": {}
-        }
-      ]
-    },
-    "visualContainerObjects": {
-      "background": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ]
     },
     "drillFilterOtherVisuals": true
   }

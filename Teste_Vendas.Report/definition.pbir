@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Teste_Vendas.SemanticModel"
+    },
+    "byConnection": null
+  }
+}
